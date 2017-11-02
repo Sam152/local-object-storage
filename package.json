@@ -1,6 +1,6 @@
 {
   "name": "local-storage-object",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Store and retrieve an object from localStorage.",
   "main": "index.js",
   "scripts": {
