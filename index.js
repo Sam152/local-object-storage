@@ -4,14 +4,17 @@ module.exports = (function() {
     this.key = key;
   };
 
-  LocalStorageObject.prototype.get = function() {
+  LocalStorageObject.prototype.get = function(default_value) {
+    if (typeof default_value === 'undefined') {
+      default_value = {};
+    }
     try {
       var data = JSON.parse(localStorage.getItem(this.key));
-      return data || {};
+      return data || default_value;
     }
     catch (e) {
       localStorage.removeItem(this.key);
-      return {};
+      return default_value;
     }
   };
 
